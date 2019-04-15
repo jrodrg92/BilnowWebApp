@@ -1,3 +1,4 @@
+var CtrlLogin = require('./controllers/ctrlLogin');
 var express=require('express');
 var path=require('path');
 const route = express.Router();
@@ -5,6 +6,8 @@ const route = express.Router();
 module.exports = {
   
     main: function(route){
+
+      var ctrlMain=new CtrlLogin();
 
       route.get('/',(req,res)=>{
 
