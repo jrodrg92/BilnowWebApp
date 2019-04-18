@@ -46,11 +46,12 @@ html {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: #fff;
-    padding: 30px;
-    width: 90%;
-    max-width: 450px;
+    padding: 300px;
+    padding-left: 300vh;
+    width: 100%;
+    max-width: 502px;
     position: relative;
-    padding: 0px;
+    padding: 10px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     text-align: center;

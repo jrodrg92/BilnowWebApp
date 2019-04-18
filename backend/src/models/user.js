@@ -11,7 +11,9 @@ module.exports = {
             tlf_Usuario: Sequelize.STRING,
             dir_Usuario: Sequelize.STRING,
             pswd_Usuario: Sequelize.STRING,
-            email_Usuaio:Sequelize.STRING
+            email_Usuario:Sequelize.STRING,
+            createdAt:Sequelize.TIME,
+            updatedAt:Sequelize.TIME
             },
             {  
                 freezeTableName: true 

@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
   extended:true
 }));
 
-init.main(app);
+init.inicio(app);
 
 // listening the Server
 app.listen(app.get('port'), () => {
