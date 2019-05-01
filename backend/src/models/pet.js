@@ -4,7 +4,7 @@ module.exports = {
 
     getPet : function(sequelize){
 
-        const Pet= sequelize.define("mascota",{
+        const Pet= sequelize.define("mascotas",{
 
             id_Mascota:{type: Sequelize.STRING,primaryKey:true},
             nombre_Mascota:Sequelize.STRING,

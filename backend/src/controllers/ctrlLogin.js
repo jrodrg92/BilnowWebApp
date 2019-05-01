@@ -1,13 +1,19 @@
-const User = require('../models/user');
+const Usermod = require('../models/user');
+const ctrlUserWin= require('../controllers/ctrlUser');
+const ctrlAddUser= require('../controllers/ctrlAddUsr');
 const conectDB= require('../utils/conectdb');
 
 var conection = conectDB.getConection();
+
 class ctrLogin{
 
     constructor(route, dir){
 
+        this.User=Usermod.getUser(conection);
+
         this.route=route;
         this.dir=dir;
+
         route.get('/',(req,res)=>{
 
             res.sendFile(dir + '/views/login.html');
@@ -15,31 +21,30 @@ class ctrLogin{
         });
 
         route.post('/login', (req,res) => {
-
-            req.body.id_Usuario
-            
-            var user=User.getUser(conection);
-            
+                        
             //Posts.findAll({ include: [{ model: User, where: {year_birth: 1984} }] }).then(posts => { /* ... */ }); 
 
             var idUser=req.body.id_Usuario;
+            var psswd=req.body.pswd_Usuario;
 
-            user.findAll({where: {id_Usuario: idUser} }).then(usuario => {             
-                usuario.forEach(elemento => {
+           User.findOne({model:user, where:{id_Usuario: idUser, pswd_Usuario: psswd}}).then(usuario =>{
 
-                console.log(elemento.dataValues);
-                
-              })
+                if(usuario==null){
+                    console.log("vacio");
+                }
+                else{
+
+                    //const ctrlUser = new ctrlUserWin(route, dir, conection, user);
+
+                }
+
             })
-            .catch(err=>{
-              console.log(err);
-            })
-
+         
         });
 
         route.get('/addUser', (req,res) => {
 
-            res.sendFile(dir+"/views/addUser.html");
+            var addUser= new ctrlAddUser(this.route, this.dir, this.User, res);
 
         });
 
