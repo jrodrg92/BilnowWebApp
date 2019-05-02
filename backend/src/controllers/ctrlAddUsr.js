@@ -1,3 +1,4 @@
+const ctrlUser = require('../controllers/ctrlUser');
 class CtrlAddUser{
 
     constructor(route, dir, User, res){
@@ -6,12 +7,14 @@ class CtrlAddUser{
         this.dir=dir;
         this.User=User;
 
-        res.sendFile(dir + '/views/addUser.html');
+        res.render(dir + '/views/addUser.html');
         
         route.post('/add', (req, res) => {
 
             User.create(req.body)
-                .then(user => res.json(user))
+                .then(user);
+
+            var winUser=new ctrlUser(route, dir, user, res);
 
         });
     }

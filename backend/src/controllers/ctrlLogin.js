@@ -1,4 +1,5 @@
 const Usermod = require('../models/user');
+const petMod = require('../models/pet');
 const ctrlUserWin= require('../controllers/ctrlUser');
 const ctrlAddUser= require('../controllers/ctrlAddUsr');
 const conectDB= require('../utils/conectdb');
@@ -9,32 +10,33 @@ class ctrLogin{
 
     constructor(route, dir){
 
-        this.User=Usermod.getUser(conection);
+        this.user=Usermod.getUser(conection);
+        this.pet=petMod.getPet(conection);
 
         this.route=route;
         this.dir=dir;
 
         route.get('/',(req,res)=>{
 
-            res.sendFile(dir + '/views/login.html');
+            res.render(dir + '/views/login.html');
         
         });
 
-        route.post('/login', (req,res) => {
+        route.post('/user', (req,res) => {
                         
             //Posts.findAll({ include: [{ model: User, where: {year_birth: 1984} }] }).then(posts => { /* ... */ }); 
 
             var idUser=req.body.id_Usuario;
             var psswd=req.body.pswd_Usuario;
 
-           User.findOne({model:user, where:{id_Usuario: idUser, pswd_Usuario: psswd}}).then(usuario =>{
+            this.user.findOne({model:this.user, where:{id_Usuario: idUser, pswd_Usuario: psswd}}).then(usuario =>{
 
                 if(usuario==null){
                     console.log("vacio");
                 }
                 else{
 
-                    //const ctrlUser = new ctrlUserWin(route, dir, conection, user);
+                    const ctrlUser = new ctrlUserWin(route, dir, usuario, res, pet);
 
                 }
 

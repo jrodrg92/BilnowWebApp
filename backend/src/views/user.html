@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Viewer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/frontend/css/user.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
     
@@ -13,22 +14,47 @@
       <div id="formContent">
         <!-- Tabs Titles -->
     
-        <!-- Icon -->
-        <div class="fadeIn first">
-          <img src="/frontend/pictures/logo.gif" id="icon" alt="User Icon" />
-        </div>
-    
-        <form id="container">
-          <div class="form-group">
-            <label type="text" id="id_Usuario" class="fadeIn second" name="id_Usuario" placeholder="">
-            <label type="text" id="nom_Usuario" class="fadeIn second" name="nom_Usuario" placeholder="">
-            <label type="text" id="ap_Usuario" class="fadeIn second" name="ap_Usuario" placeholder="">
-            <label type="text" id="tlf_Usuario" class="fadeIn second" name="tlf_Usuario" placeholder="">
-            <label type="text" id="dir_Usuario" class="fadeIn second" name="dir_Usuario" placeholder="">
-            <label type="text" id="email_Usuario" class="fadeIn second" name="email_Usuario" placeholder="">
-          </div>
-      </form>
-   
+        <table>
+          <tr>
+            <td>
+              <!-- Icon -->
+              <div class="fadeIn first">
+                <img src="/frontend/pictures/logo.gif" id="icon" alt="User Icon" />
+              </div>
+            </td>
+            <td>
+              <table>
+                <tr>
+                  <td><h>Nombre: </h></td>
+                  <td><p id="nom_Usuario" class="fadeIn second" name="nom_Usuario"><%=nom_Usuario%></p></td>
+                </tr>
+                <tr>
+                  <td><h>Apellidos: </h></td>
+                  <td><p id="nom_Usuario" class="fadeIn second" name="nom_Usuario"><%=ap_Usuario%></p></td>
+                </tr>
+                <tr>
+                  <td><h>Telefono: </h></td>
+                  <td><p id="nom_Usuario" class="fadeIn second" name="nom_Usuario"><%=tlf_Usuario%></p></td>
+                </tr>
+                <tr>
+                  <td><h>Dirección: </h></td>
+                  <td><p id="nom_Usuario" class="fadeIn second" name="nom_Usuario"><%=dir_Usuario%></p></td>
+                </tr>
+                <tr>
+                  <td><h>E-mail: </h></td>
+                  <td><p id="nom_Usuario" class="fadeIn second" name="nom_Usuario"><%=email_Usuario%></p></td>
+                </tr>
+              </table>     
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>
+              
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
     

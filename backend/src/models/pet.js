@@ -13,7 +13,7 @@ module.exports = {
             capa_Mascota:Sequelize.STRING,
             fecha_Nacimiento:Sequelize.DATE,
             sexo_Mascota:Sequelize.INTEGER,
-            id_Dueño:Sequelize.STRING
+            id_Duenio:Sequelize.STRING
 
         },{
 
