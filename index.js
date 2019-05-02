@@ -7,7 +7,8 @@ const app= express();
 // settings
 app.set('port', 3000);
 app.use('/frontend', express.static(__dirname + '/frontend'));
-app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended:true
