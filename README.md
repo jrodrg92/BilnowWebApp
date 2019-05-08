@@ -15,13 +15,14 @@ npm init -y
 
 Instalación modulos:
 
-npm i balanced-match --save
-npm i body-parser --save
-npm i express --save
-npm i mysql2 --save
-npm i sequelize --save
-npm i sequelize-auto-migration --save
-npm i sequelize-cli --save
+  - npm i balanced-match --save
+  - npm i body-parser --save
+  - npm i express --save
+  - npm i mysql2 --save
+  - npm i sequelize --save
+  - npm i sequelize-auto-migration --save
+  - npm i sequelize-cli --save
+  - npm i ejs --save
 
 Iniciar aplicación ejecutar comando desde carpeta raiz:
 
