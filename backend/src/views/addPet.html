@@ -1,0 +1,40 @@
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/frontend/css/main.css" rel="stylesheet" id="bootstrap-css">
+
+</head>
+<body>
+    
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="/frontend/pictures/logo.gif" id="icon" alt="User Icon" />
+    </div>
+
+    <form id="container" action='/add' method='POST'>
+      <div class="form-group">
+        <input type="text" id="id_Mascota" class="fadeIn second" name="id_Mascota" placeholder="dni Pet">
+        <input type="text" id="nombre_Mascota" class="fadeIn second" name="nombre_Mascota" placeholder="name">
+        <input type="text" id="esp_Mascota" class="fadeIn second" name="esp_Mascota" placeholder="animal family">
+        <input type="text" id="raza_Mascota" class="fadeIn second" name="raza_Mascota" placeholder="raza">
+        <input type="text" id="capa_Mascota" class="fadeIn second" name="capa_Mascota" placeholder="skin color">
+        <input type="text" id="fecha_Nacimiento" class="fadeIn second" name="fecha_Nacimiento" placeholder="fecha_Nacimiento">
+        <input type="text" id="sexo_Mascota	" class="fadeIn second" name="sexo_Mascota	" placeholder="sexo">
+        <input type="submit" class="fadeIn fourth" value="Add Pet">
+      </div>
+  </form>
+  
+  </div>
+</div>
+
+</body>
+</html>
