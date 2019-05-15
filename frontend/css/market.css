@@ -11,32 +11,29 @@ p {
     width: 85%;
 }
 
-#infoUser{
-
-    padding-left: 40px;
-
-}
-
-#formContentInfo{
+#products{
 
     -webkit-border-radius: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px; 
+    border-radius: 10px 10px 10px 10px;
     background: #fff;
-    margin-right: 30px;
-    padding-right: 420px;
+    height: 800px;
+    padding-left: 1370px;
+    margin-right: 20px;
+    margin-left: 40px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
 
 }
 
-#colPets{
+#itemsToBuy{
 
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: #fff;
-    margin-left: 20px;
-    height: 470px;
-    width: 100px;
+    margin-left: 40px;
+    
+    height: 800px;
+    width: 600px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
 
@@ -46,7 +43,7 @@ input[type=button], input[type=submit], input[type=reset]  {
     background-color: #150285;
     border: none;
     color: white;
-    padding: 15px 30px;
+    padding: 15px 80px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
