@@ -3,9 +3,11 @@ const faker=require('faker');
 
 module.exports = {
 
-    getProduct: function(sequelize){
+    getProduct: function(sequelize, user){
 
-        const Product=sequelize.define("productos",{
+        this.user=user;
+
+        const Product=sequelize.define("Productos",{
 
             id_Producto:{type: Sequelize.STRING, primaryKey:true},
             nom_Producto:Sequelize.STRING,
@@ -14,6 +16,8 @@ module.exports = {
             price_Producto:Sequelize.INTEGER
 
         });
+
+        Product.hasMany(Product, {as: 'Products'});
 
         return Product;
 

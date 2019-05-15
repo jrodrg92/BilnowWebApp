@@ -2,7 +2,7 @@
 
 module.exports = {
 
-    getPet : function(sequelize){
+    getPet : function(sequelize,user){
 
         const Pet= sequelize.define("mascotas",{
 
@@ -20,6 +20,8 @@ module.exports = {
             freezeTableNane: true
 
         });
+
+        user.hasMany(Pet);
 
         return Pet;
 

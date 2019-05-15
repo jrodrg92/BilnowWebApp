@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 
 module.exports = {
 
-    getProductRes: function(sequelize){
+    getProductRes: function(sequelize,reserves,prod){
 
         const ProductRes=sequelize.define("productosreservados",{
            
@@ -10,6 +10,9 @@ module.exports = {
             id_Producto: Sequelize.STRING
 
         });
+
+        ProductRes.hasMany(reserves);
+        ProductRes.hasMany(prod);
         
         return ProductRes;
 

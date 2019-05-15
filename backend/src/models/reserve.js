@@ -2,16 +2,18 @@ const Sequelize = require('sequelize')
 
 module.exports = {
 
-    getProductRes: function(sequelize){
+    getReserve: function(sequelize,user){
 
-        const ProductRes=sequelize.define("productosreservados",{
+        const Reserves=sequelize.define("reserva",{
            
             id_Reserva: {type: Sequelize.STRING, primaryKey:true},
             id_Usuario: Sequelize.STRING
 
         });
         
-        return ProductRes;
+        user.hasMany(Reserves);
+
+        return Reserves;
 
     }
 
