@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col">
         </div>
-        <div class="col-2 mi-columna" style="margin-top: 20px">
+        <div class="col-2 mi-columna" style="margin-top: 20px;margin-left: 1600px">
             <form id="container" action='/store' method='GET'>
               <input type="submit" class="fadeIn fourth" value="Market Place">
             </form>
@@ -44,13 +44,41 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg" id="colPets" style="margin-right: 80px; margin-bottom: 20px;">
+                    <form action="/addPet" method="GET" style="margin-bottom: 20px; margin-right: 100px">
+                      <input type="submit" class="fadeIn fourth" value="Add Pet">
+                    </form>
+                
+                    <div class="navbart" >
+                     <ul  >
+                        <%for(let i=0; i < pets.length ; i++) {%>
+                          <li>
+                              <div class="container" action="/showPetInfo" method="POST">
+                                <div class="row">
+                                  <div class="col">
+                                    <p id="nom_Pet" class="fadeIn second" name="nom_Pet"><%=pets[i].nombre_Mascota%></p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col">
+                                    <p id="birthdate" class="fadeIn second" name="birthdate"><%=pets[i].fecha_Nacimiento%></p>
+                                  </div>
+                                  <div class="col">
+                                      <input type="submit" class="fadeIn fourth"  style="margin-bottom: 20px; margin-right: 100px" value="Show Info">
+                                  </div>
+                                </div>
+                              </div>
+                          </li>               
+                        <%}%>
+                     </ul>
                     </div>
+
+                    
+
                 </div>
             </div>
         </div>  
         <div class="col-lg" id="formContentInfo" style="margin-bottom: 20px;">
-            col5
+
         </div>
     </div>
 </div>

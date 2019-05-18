@@ -1,39 +1,36 @@
 <% include partials/headerMarketStr%>
 <div class="container-fluid">
-    <%=products%>
     <div class="row">
-        <div class="col-3" id="itemsToBuy">
-                <input type="submit" class="fadeIn fourth" style="margin-left: 1100px; margin-top: 20px" value="<--">
-                <form id="itemsToBuy"></form>
+    </div>
+    <div class="row">
+        <div class="col-md-2" id="itemsToBuy">
         </div>
-        <div class="col-md-6">
-                <form id="products">
-                    
-                    <%for(var i=0; i < products.lenth; i++) {%>
+        <div class="col-md" style="margin-left: 40px; margin-top:20px">
 
                         <div class="container">
-                                <div class="row p-5">
-                                    <div class="col-md-4">
+                                <div class="row">
+                                    <% for( var i=0; i < prods.length; i++) {%>
+
+                                    <div class="col-md-5">
                                         <div class="p-4">
                                             <div class="card">
-                                                <img src="<%products[i].foto_Producto%>" class="card-img-top">
+                                                <img src="<%=prods[i].foto_Producto%>" class="card-img-top">
                                                 <div class="card-body">
-                                                    <form action="POST">
-                                                        <h3 class="card-title"><%products[i].nom_Producto%></h3>
-                                                        <p class="card-text"><%products[i].price_Producto%></p>
-                                                        <input type="submit" class="fadeIn fourth" value="Add">    
+                                                    <form action="AddPrd" method="POST">
+                                                        <h3 class="card-title"><%=prods[i].nom_Producto%></h3>
+                                                        <p class="card-text"><%=prods[i].price_Producto%>e</p>
+                                                        <input type="submit" class="fadeIn fourth"  value="Buy">    
                                                     </form>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> 
                                     </div>
-                                </div>
+                                    <%}%>
+                                </div>  
                             </div>
-
-                    <%}%>
-
-                </form>
+                   
         </div>
+        <div class="col"></div>
     </div>
 </div>
 <% include partials/footerMktStr%>
