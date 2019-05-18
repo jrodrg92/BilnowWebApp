@@ -1,6 +1,8 @@
 const Usermod = require('../models/user');
 const petMod = require('../models/pet');
 const prodMod =require('../models/product');
+const reserve =require('../models/reserve');
+const prodreserved= require('../models/productsReserved');
 const ctrlUserWin= require('../controllers/ctrlUser');
 const ctrlAddUser= require('../controllers/ctrlAddUsr');
 const conectDB= require('../utils/conectdb');
@@ -12,12 +14,15 @@ class ctrLogin{
     constructor(route, dir){
 
         this.user=Usermod.getUser(conection);
-        this.pet=petMod.getPet(conection);
-        this.prod=prodMod.getProduct(conection);
-
+        this.pet=petMod.getPet(conection,this.user);
+        this.reserve=reserve.getReserve(conection,this.user);
+        this.prod=prodMod.getProduct(conection,this.user);
+        this.prodreserved =prodreserved.getProductRes(conection,this.reserve);
 
         this.route=route;
         this.dir=dir;
+
+        route.get('/backuser', (req,res)=>{});
 
         route.get('/',(req,res)=>{
 

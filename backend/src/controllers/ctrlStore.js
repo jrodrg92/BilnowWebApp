@@ -1,17 +1,20 @@
+const ctrlUser= require('./ctrlUser');
+var express=require('express');
 class CtrlStore{
 
-    constructor(route, dir, user, res, prod, req){
+    constructor(route, dir, user, res, prod, req, pet){
 
-        this.route=route;
         this.dir=dir;
         this.User=user;
-        
-        let perPage = 9;
-        let page=req.params.page || 1;
+        this.prod=prod;
+        this.pet=pet;
+        const prods = [];
 
-        prod.findAll({ include: [{atributes: ['nom_Producto','foto_Producto','fabricante_Pro','price_Producto']}] }).then(prods => { 
-            console.log(prods.dataValues);
-         });
+        this.prod.findAll({model:this.prod}).then(prods => { 
+                res.render(dir + '/views/store', {prods});
+        }).catch(error => {
+            console.log(error);
+        });
 
     }
 
