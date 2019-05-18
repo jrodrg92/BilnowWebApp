@@ -1,6 +1,7 @@
 var express = require('express');
 var init = require('./backend/src/routes');
 var bodyParser=require('body-parser');
+var ejs = require('ejs');
 
 const app= express();
 
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({
   extended:true
 }));
 
-init.inicio(app);
+init.main(app);
 
 // listening the Server
 app.listen(app.get('port'), () => {
