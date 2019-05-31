@@ -18,8 +18,10 @@ class ctrLogin{
         this.pet=petMod.getPet(conection,this.user);
         this.reserve=reserve.getReserve(conection,this.user);
         this.prod=prodMod.getProduct(conection,this.user);
-        this.prodreserved =prodreserved.getProductRes(conection,this.reserve);
+        this.prodreserved =prodreserved.getProductRes(conection,this.reserve, this.prod);
         this.date=date.getDate(conection,this.pet);
+
+        this.prodreserved.findAll({inclued :[{model:prodreserved}]});
 
         this.route=route;
         this.dir=dir;

@@ -26,8 +26,17 @@ class CtrlCarWin{
 
         route.post('/makeBuy', (req,res,next)=>{
 
-            let reserve = faker.random.uuid();
+            let idreserve = faker.random.uuid();
             console.log(reserve.length);
+
+            for(var i=0; i<products.length; i++){
+
+                this.prodreserved.create({id_Reserva:faker.random.uuid(), id_Producto:products[i].id_Producto, productosreservadoIdProducto:products[i].id_Producto}).then();
+
+
+            }
+
+            reserve.create({id_Reserva:idreserve, id_Usuario:user.id_Usuario}).then();
 
 
         });

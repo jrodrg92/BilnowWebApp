@@ -12,6 +12,7 @@ module.exports = {
         });
 
         ProductRes.hasMany(reserves);
+        ProductRes.hasMany(prod);
         
         return ProductRes;
 
