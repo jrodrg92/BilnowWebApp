@@ -15,9 +15,16 @@ class CtrlAddPet{
         
         route.post('/addPet', (req, res) => {
 
-            pet.create(req.body);
+            
 
-            res.redirect('/user');
+            console.log(req.body.id_Mascota);
+            console.log(req.body.nombre_Mascota);
+            console.log(req.body.esp_Mascota);
+            console.log(req.body.raza_Mascota);
+            console.log(req.body.capa_Mascota);
+            console.log(req.body.datepicker);
+            //revisar sexo mascota
+            console.log(req.body.sexo_Mascota);
 
         });
     }
