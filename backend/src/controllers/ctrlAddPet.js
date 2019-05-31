@@ -5,7 +5,7 @@ class CtrlAddPet{
 
         this.route=route;
         this.dir=dir;
-        this.User=user;
+        this.user=user;
         this.Prod=Prod;
         this.date=date;
         this.reserve=reserve;
@@ -24,7 +24,16 @@ class CtrlAddPet{
                 sexo_Mascota:req.body.sexo_Mascota,
                 id_Duenio:user.id_Usuario});
 
-                next(window.history.back());
+
+                pet.findAll({model: this.pet, where:{id_Duenio:user.id_Usuario}}).then(pets=>{
+                    this.petsO=pets;
+                    res.render(dir + '/views/user', {pets,nom_Usuario:user.nom_Usuario,
+                                                          ap_Usuario:user.ap_Usuario, 
+                                                          tlf_Usuario:user.tlf_Usuario, 
+                                                         dir_Usuario:user.dir_Usuario, 
+                                                         email_Usuario:user.email_Usuario});
+        
+                });
 
         });
     }
