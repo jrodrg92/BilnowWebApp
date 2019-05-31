@@ -32,7 +32,7 @@ class ctrlUser{
 
         });
 
-        route.get('/addPet', (req,res) => {
+        route.get('/addPet', (req,res, next) => {
             var addPet= new CtrlAddPet(this.route, this.dir, this.user, res, this.pet, this.prod, this.date, this.reserve, this.prodreserved);
         });
             

@@ -21,8 +21,6 @@ class ctrLogin{
         this.prodreserved =prodreserved.getProductRes(conection,this.reserve, this.prod);
         this.date=date.getDate(conection,this.pet);
 
-        this.prodreserved.findAll({inclued :[{model:prodreserved}]});
-
         this.route=route;
         this.dir=dir;
 
@@ -58,7 +56,7 @@ class ctrLogin{
 
         route.get('/addUser', (req,res) => {
 
-            var addUser= new ctrlAddUser(this.route, this.dir, this.User, res, this.prod);
+            var addUser= new ctrlAddUser(this.route, dir,this.user, res, this.pet, this.prod, this.date,  this.reserve, this.prodreserved);
 
         });
 
