@@ -1,4 +1,4 @@
-<% include partials/headerMain%>
+<% include partials/headerAddPet%>
     
 <div class="wrapper fadeInDown">
   <div id="formContent">
@@ -9,15 +9,15 @@
       <img src="/frontend/pictures/logo.gif" id="icon" alt="User Icon" />
     </div>
 
-    <form id="container" action='/add' method='POST'>
+    <form id="container" action='/addPet' method='POST'>
       <div class="form-group">
         <input type="text" id="id_Mascota" class="fadeIn second" name="id_Mascota" placeholder="dni Pet">
         <input type="text" id="nombre_Mascota" class="fadeIn second" name="nombre_Mascota" placeholder="name">
         <input type="text" id="esp_Mascota" class="fadeIn second" name="esp_Mascota" placeholder="animal family">
         <input type="text" id="raza_Mascota" class="fadeIn second" name="raza_Mascota" placeholder="raza">
         <input type="text" id="capa_Mascota" class="fadeIn second" name="capa_Mascota" placeholder="skin color">
-        <input type="text" id="fecha_Nacimiento" class="fadeIn second" name="fecha_Nacimiento" placeholder="fecha_Nacimiento">
-        <input type="text" id="sexo_Mascota	" class="fadeIn second" name="sexo_Mascota	" placeholder="sexo(Numeric) 1 M / 0 F">
+        <input type="text" id="datepicker" class="fadeIn second" name="datepicker" placeholder="fecha_Nacimiento">
+        <input type="text" id="sexo_Mascota	" class="fadeIn second" name="sexo_Mascota" placeholder="sexo(Numeric) 1 M / 0 F">
         <input type="submit" class="fadeIn fourth" value="Add Pet">
       </div>
   </form>

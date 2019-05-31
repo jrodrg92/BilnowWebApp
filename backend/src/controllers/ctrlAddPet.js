@@ -1,22 +1,23 @@
 const ctrlUser = require('../controllers/ctrlUser');
 class CtrlAddPet{
 
-    constructor(route, dir, user, res, pet, Prod){
+    constructor(route, dir, user, res, pet, Prod, date,  reserve, prodreserved){
 
         this.route=route;
         this.dir=dir;
         this.User=user;
         this.Prod=Prod;
+        this.date=date;
+        this.reserve=reserve;
+        this.prodreserved=prodreserved;
 
         res.render(dir + '/views/addPet');
         
-        route.post('/add', (req, res) => {
+        route.post('/addPet', (req, res) => {
 
-            pet.create(req.body)
-                .then(pet =>{
-                    const winUser=new ctrlUser(route,this.dir,this.User,res,pet,this.Prod);
-                }
-                );
+            pet.create(req.body);
+
+            res.redirect('/user');
 
         });
     }

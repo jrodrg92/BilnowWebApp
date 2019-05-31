@@ -2,6 +2,7 @@ const Usermod = require('../models/user');
 const petMod = require('../models/pet');
 const prodMod =require('../models/product');
 const reserve =require('../models/reserve');
+const date=require('../models/date');
 const prodreserved= require('../models/productsReserved');
 const ctrlUserWin= require('../controllers/ctrlUser');
 const ctrlAddUser= require('../controllers/ctrlAddUsr');
@@ -18,6 +19,7 @@ class ctrLogin{
         this.reserve=reserve.getReserve(conection,this.user);
         this.prod=prodMod.getProduct(conection,this.user);
         this.prodreserved =prodreserved.getProductRes(conection,this.reserve);
+        this.date=date.getDate(conection,this.pet);
 
         this.route=route;
         this.dir=dir;
@@ -44,7 +46,7 @@ class ctrLogin{
                 }
                 else{
 
-                    const ctrlUser = new ctrlUserWin(route, dir, usuario, res, this.pet, this.prod);
+                    const ctrlUser = new ctrlUserWin(this.route, dir, usuario, res, this.pet, this.prod, this.date,  this.reserve, this.prodreserved);
 
                 }
 

@@ -1,10 +1,15 @@
 <% include partials/headerMarketStr%>
 <div class="container-fluid">
     <div class="row">
+        <div class="col-2 mi-columna" style="margin-top: 20px;margin-left: 1550px">
+                    <form action="/ElementToBuy" method="GET">
+                <input type="submit" class="fadeIn fourth"  value="Elements to buy">  
+            </form>
+        </div>
+
     </div>
     <div class="row">
-        <div class="col-md-2" id="itemsToBuy">
-        </div>
+    
         <div class="col-md" style="margin-left: 40px; margin-top:20px">
 
                         <div class="container">
@@ -16,7 +21,7 @@
                                             <div class="card">
                                                 <img src="<%=prods[i].foto_Producto%>" class="card-img-top">
                                                 <div class="card-body">
-                                                    <form action="AddPrd" method="POST">
+                                                    <form action="AddPrd?id=<%=i%>" method="POST">
                                                         <h3 class="card-title"><%=prods[i].nom_Producto%></h3>
                                                         <p class="card-text"><%=prods[i].price_Producto%>e</p>
                                                         <input type="submit" class="fadeIn fourth"  value="Buy">    

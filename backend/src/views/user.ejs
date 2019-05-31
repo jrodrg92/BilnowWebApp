@@ -28,7 +28,7 @@
                               <td><h>Apellidos: </h></td>
                               <td><p id="nom_Usuario" class="fadeIn second" name="nom_Usuario"><%=ap_Usuario%></p></td>
                             </tr>
-                            <tr>
+                            <tr>  
                               <td><h>Telefono: </h></td>
                               <td><p id="nom_Usuario" class="fadeIn second" name="nom_Usuario"><%=tlf_Usuario%></p></td>
                             </tr>
@@ -48,38 +48,33 @@
                       <input type="submit" class="fadeIn fourth" value="Add Pet">
                     </form>
                 
-                    <div class="navbart" >
-                     <ul  >
-                        <%for(let i=0; i < pets.length ; i++) {%>
-                          <li>
-                              <div class="container" action="/showPetInfo" method="POST">
-                                <div class="row">
-                                  <div class="col">
-                                    <p id="nom_Pet" class="fadeIn second" name="nom_Pet"><%=pets[i].nombre_Mascota%></p>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col">
-                                    <p id="birthdate" class="fadeIn second" name="birthdate"><%=pets[i].fecha_Nacimiento%></p>
-                                  </div>
-                                  <div class="col">
-                                      <input type="submit" class="fadeIn fourth"  style="margin-bottom: 20px; margin-right: 100px" value="Show Info">
-                                  </div>
-                                </div>
-                              </div>
-                          </li>               
-                        <%}%>
-                     </ul>
-                    </div>
-
-                    
-
+                 
                 </div>
             </div>
         </div>  
-        <div class="col-lg" id="formContentInfo" style="margin-bottom: 20px;">
-
-        </div>
+        <div class="navbart" style="margin-right: 300px">
+            <ul  >
+               <%for(let i=0; i < pets.length ; i++) {%>
+                 <li>
+                     <div class="container">
+                       <div class="row">
+                         <div class="col">
+                           <p id="nom_Pet" class="fadeIn second" name="nom_Pet"><%=pets[i].nombre_Mascota%></p>
+                         </div>
+                       </div>
+                       <div class="row">
+                         <div class="col">
+                           <p id="birthdate" class="fadeIn second" name="birthdate"><%=pets[i].fecha_Nacimiento%></p>
+                         </div>
+                         <form class="col"  action="/showPetInfo?id=<%=i%>" method="POST">
+                             <input type="submit" class="fadeIn fourth"  style="margin-bottom: 20px; margin-right: 100px" value="Show Info">  
+                         </form>
+                       </div>
+                     </div>
+                 </li>               
+               <%}%>
+            </ul>
+           </div>
     </div>
 </div>
 
