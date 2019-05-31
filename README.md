@@ -23,6 +23,8 @@ Instalación modulos:
   - npm i sequelize-auto-migration --save
   - npm i sequelize-cli --save
   - npm i ejs --save
+  - npm i faker --save
+
 
 Iniciar aplicación ejecutar comando desde carpeta raiz:
 
