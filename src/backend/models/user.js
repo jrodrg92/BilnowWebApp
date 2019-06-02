@@ -10,8 +10,8 @@ module.exports = {
             ap_Usuario: Sequelize.STRING,
             tlf_Usuario: Sequelize.STRING,
             dir_Usuario: Sequelize.STRING,
-            pswd_Usuario: Sequelize.STRING,
             email_Usuario:Sequelize.STRING,
+            pswd_Usuario: Sequelize.STRING,
             createdAt:Sequelize.TIME,
             updatedAt:Sequelize.TIME
             },

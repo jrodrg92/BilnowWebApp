@@ -1,4 +1,4 @@
-var ctrlUser = require('./ctrlUser');
+const ctrlUser = require('./ctrlUser');
 
 module.exports.showlogin = function(res){
 

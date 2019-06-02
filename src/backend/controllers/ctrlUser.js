@@ -5,6 +5,8 @@ const ctrlStore=require('./ctrlStore');
 
 module.exports.showUser = function(res, user, petBD){
 
+    console.log(user.id_Usuario);
+
     setOwner(user);
     petBD.findAll({model: this.petBD, where:{id_Duenio:user.id_Usuario}}).then(pets=>{
         setPets(pets);
@@ -39,7 +41,7 @@ module.exports.showPetInfo= function(req,res, petBD, dateBD){
 
 };
 
-function setPets(pets){
+module.exports.setPets = function(pets){
 
     this.pets=pets;
 

@@ -53,9 +53,9 @@ router.get('/showaddUser',(req,res)=>{
 
 //ADDUSER
 
-router.post('/addUser', (req, res) => {
+router.post('/addUser', (req, res, next) => {
 
-  ctrlAddUsr.addUser(req,res, user, pet);
+  ctrlAddUsr.addUser(req,res,user,pet);
 
 });
 
