@@ -47,12 +47,23 @@ module.exports.setPets = function(pets){
 
 }
 
+function setPets(pets){
+
+    this.pets=pets;
+
+}
+
 function getPets(i){
 
     return this.pets[i];
 
 }
 
+module.exports.setOwner = function(owner){
+
+    this.owner=owner;
+
+}
 
 function setOwner(owner){
 

@@ -1,5 +1,6 @@
 var ctrlUser = require('./ctrlUser');
 
+
 function setOwner(owner){
 
     this.owner=owner;
