@@ -1,4 +1,12 @@
 const ctrlCarWin=require('./ctrlCarrito');
+const ctrlUser= require('./ctrlUser');
+
+module.exports.back = function(req,res,pet){
+
+    const usuario = getBuyer();
+    ctrlUser.showUser(res, usuario, pet);
+
+};
 
 module.exports.showMarketWin = function(req,res,buyer, prodBD){
 

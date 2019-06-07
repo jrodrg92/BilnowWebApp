@@ -2,7 +2,7 @@ var express = require('express');
 var init = require('./src/routes');
 var bodyParser=require('body-parser');
 
-const app= express();
+const app= express(); //Se crea una instancia de la aplicacion para configurarla
 
 // settings
 app.set('port', 3000);

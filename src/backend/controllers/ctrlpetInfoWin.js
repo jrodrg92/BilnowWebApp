@@ -1,6 +1,14 @@
 var ctrlUser = require('./ctrlUser');
 const faker= require('faker');
 
+module.exports.back = function(req,res,pet){
+
+    const usuario = getOwner();
+    ctrlUser.showUser(res, usuario, pet);
+
+};
+
+
 module.exports.showPetInfoWin= function(req, res, pet ,own, petBD, dateBD){
 
     setPet(pet);

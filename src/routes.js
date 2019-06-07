@@ -99,6 +99,12 @@ router.post('/addPet', (req, res) => {
 
 //PETINFOWINDOW
 
+router.get('/back', (req,res) => {
+
+  ctrlPetInfoWin.back(req,res, pet);
+  
+})
+
 router.post('/addCita', (req, res) => {
 
   ctrlPetInfoWin.addCita(req,res, date);
@@ -120,6 +126,11 @@ router.post('/borrarCita', (req, res) => {
 
 //STORE
 
+router.get('/back', (req,res) => {
+
+  ctrlStore.back(req,res, pet);
+  
+})
 
 router.get('/ElementToBuy', (req, res) => {
 
