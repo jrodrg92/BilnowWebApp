@@ -1,0 +1,26 @@
+<% include partials/headerMain%>
+    
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="/frontend/pictures/logo.gif" id="icon" alt="User Icon" />
+    </div>
+
+    <form id="container" action='/addPet' method='POST'>
+      <div class="form-group">
+        <input type="text" id="id_Producto" class="fadeIn second" name="id_Producto" placeholder="dni Pet">
+        <input type="text" id="nom_Producto" class="fadeIn second" name="nom_Producto" placeholder="name">
+        <input type="file" id="foto_Producto" class="fadeIn second" name="foto_Producto" placeholder="animal family">
+        <input type="text" id="fabricante_Pro" class="fadeIn second" name="fabricante_Pro" placeholder="raza">
+        <input type="text" id="price_Producto" class="fadeIn second" name="price_Producto" placeholder="skin color">
+        <input type="submit" class="fadeIn fourth" value="Add Prod">
+      </div>
+  </form>
+  
+  </div>
+</div>
+
+<% include partials/footerMain%>
