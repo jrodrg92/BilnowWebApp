@@ -14,6 +14,7 @@ const ctrlAddPet = require('./backend/controllers/ctrlAddPetWin');
 const ctrlPetInfoWin=require('./backend/controllers/ctrlpetInfoWin');
 const ctrlStore=require('./backend/controllers/ctrlStore');
 const ctrlCarWin=require('./backend/controllers/ctrlCarrito');
+const ctrlAddProd = require('./backend/controllers/ctrlAddProd');
 
 //IMPORT MODELS AND INIZILICE THEM
 const Usermod = require('./backend/models/user');
@@ -46,10 +47,16 @@ router.post('/loginuser', (req,res) => {
 
 router.get('/showaddUser',(req,res)=>{
 
-  ctrlAddUsr.showaddUser(res);
-
+    ctrlAddUsr.showaddUser(0,res);
+  
 });
 
+router.post('/showaddUser',(req,res)=>{
+
+  var rol=req.query.id;
+  ctrlAddUsr.showaddUser(rol,res);
+
+});
 
 //ADDUSER
 
@@ -59,6 +66,11 @@ router.post('/addUser', (req, res, next) => {
 
 });
 
+router.post('/moduser', (req, res) => {
+
+  ctrlAddUsr.addUser(req,res,user,pet);
+
+});
 
 //USER
 
@@ -80,6 +92,12 @@ router.get('/store', (req, res) => {
 
 });
 
+router.get('/showmodUser', (req, res) => {
+
+  ctrlUser.showmodUser(req,res);
+
+});
+
 router.get('/logout', function(req, res, next) {
 
     res.render('login');
@@ -91,6 +109,12 @@ router.get('/logout', function(req, res, next) {
 //ADDPET
 
 router.post('/addPet', (req, res) => {
+
+  ctrlAddPet.addPet(req,res, pet);
+
+});
+
+router.post('/modPet', (req, res) => {
 
   ctrlAddPet.addPet(req,res, pet);
 
@@ -108,6 +132,12 @@ router.get('/back', (req,res) => {
 router.post('/addCita', (req, res) => {
 
   ctrlPetInfoWin.addCita(req,res, date);
+
+});
+
+router.get('/showmodPet', (req, res) => {
+
+  ctrlPetInfoWin.showmodPet(req,res);
 
 });
 
@@ -132,6 +162,12 @@ router.get('/back', (req,res) => {
   
 })
 
+router.get('/addProduct', (req,res) => {
+
+  ctrlStore.showaddProd(req,res);
+  
+})
+
 router.get('/ElementToBuy', (req, res) => {
 
   ctrlStore.showCarritoWin(req,res);
@@ -141,7 +177,6 @@ router.get('/ElementToBuy', (req, res) => {
 router.post('/AddPrd', (req, res) => {
   var pos= req.query.id;
   ctrlStore.addProdLista(req,res,pos);
-
 });
 
 

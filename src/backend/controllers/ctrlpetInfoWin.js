@@ -1,4 +1,5 @@
 var ctrlUser = require('./ctrlUser');
+var ctrlAddPet = require('./ctrlAddPetWin');
 const faker= require('faker');
 
 module.exports.back = function(req,res,pet){
@@ -48,6 +49,13 @@ module.exports.addCita= function(req, res , dateBD){
                                            fecha_Nacimiento:pet.dataValues.fecha_Nacimiento});
       });       
 
+
+};
+
+module.exports.showmodPet = function(req,res){
+
+    var pet=getPet();
+    ctrlAddPet.showmodPet(req, res, pet)
 
 };
 

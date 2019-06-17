@@ -1,0 +1,33 @@
+<% include partials/headerpetWin%>
+
+<div class="container-fluid">
+        <form class="col"  action="/back" method="get">
+            <input type="submit" class="fadeIn fourth"  style="margin-bottom: 20px; margin-right: 100px" value="Back">
+        </form>
+        <div class="navbart" style="margin-right: 500px; margin-top: 30px">
+            <h1>CITAS MASCOTA</h1>
+            <ul>
+               <%for(var i=0; i < reservas.length ; i++) {%>
+                 <li>
+                     <div class="container">
+                       <div class="row">
+                         <div class="col">
+                           <p id="fecha_Cita" class="fadeIn second" name="fecha_Cita"><%=reservas[i].id_Reserva%></p>
+                         </div>
+                       </div>
+                       <div class="row">
+                          <form class="col"  action="/verReserva?id=<%=i%>" method="post">
+
+                            <input type="submit" class="fadeIn fourth"  style="margin-bottom: 20px; margin-right: 100px" value="ver compra">
+                        
+                        </form>
+                       </div>
+                     </div>
+                 </li>               
+               <%}%>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<% include partials/footerUser%>

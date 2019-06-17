@@ -17,9 +17,7 @@ module.exports.login = function(req,res,user,pet){
             console.log("vacio");
         }
         else{
-  
             ctrlUser.showUser(res,usuario,pet);
-            
         }
   
     })

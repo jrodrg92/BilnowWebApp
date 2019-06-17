@@ -1,0 +1,27 @@
+<% include partials/headerAddPet%>
+    
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="/frontend/pictures/logo.gif" id="icon" alt="User Icon" />
+    </div>
+
+    <form id="container" action='/modPet' method='POST'>
+      <div class="form-group">
+        <input type="text" id="id_Mascota" class="fadeIn second" name="id_Mascota" placeholder="<%=id_Mascota%>">
+        <input type="text" id="nombre_Mascota" class="fadeIn second" name="nombre_Mascota" placeholder="<%=nombre_Mascota%>">
+        <input type="text" id="esp_Mascota" class="fadeIn second" name="esp_Mascota" placeholder="<%=esp_Mascota%>">
+        <input type="text" id="raza_Mascota" class="fadeIn second" name="raza_Mascota" placeholder="<%=raza_Mascota%>">
+        <input type="text" id="capa_Mascota" class="fadeIn second" name="capa_Mascota" placeholder="<%=capa_Mascota%>">
+        <input type="text" id="datepicker" class="fadeIn second" name="datepicker" placeholder="<%=fecha_Nacimiento%>">
+        <input type="submit" class="fadeIn fourth" value="Mod Pet">
+      </div>
+  </form>
+  
+  </div>
+</div>
+
+<% include partials/footerMain%>

@@ -1,5 +1,7 @@
 const ctrlCarWin=require('./ctrlCarrito');
 const ctrlUser= require('./ctrlUser');
+const ctrlAddProd = require('./ctrlAddProd');
+const ctrlReservesWin = require('./ctrlReservasWin');
 
 module.exports.back = function(req,res,pet){
 
@@ -15,7 +17,7 @@ module.exports.showMarketWin = function(req,res,buyer, prodBD){
     prodBD.findAll({model:this.prod}).then(prods => { 
 
         setProds(prods);
-        res.render('store', {prods});
+        res.render('store', {prods,buyer});
     }).catch(error => {
         console.log(error);
     });
@@ -27,6 +29,22 @@ module.exports.showCarritoWin = function(req,res){
     var buyer=getBuyer();
     var prodToBuy = getProductsTobuy();
     ctrlCarWin.showCarritotWin(req,res,buyer,prodToBuy);
+
+};
+
+module.exports.showaddProd = function(req,res){
+
+    var buyer=getBuyer();
+    ctrlAddProd.showaddProd(res,buyer);
+   
+
+};
+
+module.exports.comprasUser = function(req,res,reservesBD){
+
+    var buyer=getBuyer();
+    ctrlReservesWin.showreservasWin(req,res,buyer,reservesBD);
+   
 
 };
 

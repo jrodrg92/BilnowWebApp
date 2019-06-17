@@ -6,10 +6,15 @@
                 <input type="submit" class="fadeIn fourth" value="back">
             </form>
             <%
-                if(usuario.rol=1){
+                if(buyer.rol==1){
             %>
                 <form action= "/addProduct" method="GET">
                     <input type="submit" class="fadeIn fourth" value="addProduct">
+                </form>
+            <%}
+            else{%>
+                <form action= "/misCompras" method="GET">
+                    <input type="submit" class="fadeIn fourth" value="compras Usuario">
                 </form>
             <%}%>
         </div>

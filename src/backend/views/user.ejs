@@ -7,12 +7,15 @@
         </div>
         <div class="col-2 mi-columna" style="margin-top: 20px;margin-left: 1600px">
             <%if(rol==1){%>
-              <form id="container" action='/addUser' method='GET'>
+              <form id="container" action='/showaddUser?id=1' method='POST'>
                 <input type="submit" class="fadeIn fourth" value="addUser">
               </form>
             <%}%>
             <form id="container" action='/logout' method='GET'>
               <input type="submit" class="fadeIn fourth" value="log out">
+            </form>
+            <form id="container" action='/showmodUser' method='GET'>
+              <input type="submit" class="fadeIn fourth" value="modificar usuario">
             </form>
         </div>
         <div class="col-2 mi-columna" style="margin-top: 20px;margin-left: 1600px">
