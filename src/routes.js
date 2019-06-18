@@ -68,7 +68,7 @@ router.post('/addUser', (req, res, next) => {
 
 router.post('/moduser', (req, res) => {
 
-  ctrlAddUsr.addUser(req,res,user,pet);
+  ctrlAddUsr.modUser(req,res,user,pet);
 
 });
 
@@ -116,7 +116,7 @@ router.post('/addPet', (req, res) => {
 
 router.post('/modPet', (req, res) => {
 
-  ctrlAddPet.addPet(req,res, pet);
+  ctrlAddPet.modPet(req,res, pet,date);
 
 });
 

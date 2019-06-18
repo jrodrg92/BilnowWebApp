@@ -10,6 +10,8 @@ module.exports.showaddUser = function(rol,res){
 
 module.exports.showmodUser = function(req,res,user){
 
+    setOwner(user);
+
     res.render('modUser', {nom_Usuario:user.dataValues.nom_Usuario,
                             ap_Usuario:user.ap_Usuario, 
                             tlf_Usuario:user.tlf_Usuario, 
@@ -35,41 +37,43 @@ module.exports.addUser = function(req,res,user,pet){
     
 };
 
-module.exports.modUser = function(req,res,user,userBD,pet){
+module.exports.modUser = function(req,res,userBD,pet){
+
+    var user=getOwner();
 
     var nom,ap,tlf,dir,email,psswd;
 
-    if(req.body.nom_Usuario==null){
+    if(req.body.nom_Usuario==''){
         nom =user.nom_Usuario;
     }
     else{
         nom=req.body.nom_Usuario;
     }
-    if(req.body.ap_Usuario==null){
+    if(req.body.ap_Usuario==''){
         ap =user.ap_Usuario;
     }
     else{
         ap=req.body.ap_Usuario;
     }
-    if(req.body.tlf_Usuario==null){
+    if(req.body.tlf_Usuario==''){
         tlf =user.tlf_Usuario;
     }
     else{
         tlf=req.body.tlf_Usuario;
     }
-    if(req.body.dir_Usuario==null){
+    if(req.body.dir_Usuario==''){
         dir =user.dir_Usuario;
     }
     else{
         dir=req.body.dir_Usuario;
     }
-    if(req.body.email_Usuario==null){
+    if(req.body.email_Usuario==''){
         email =user.email_Usuario;
     }
     else{
         email=req.body.email_Usuario;
     }
-    if(req.body.pswd_Usuario==null){
+    if(req.body.pswd_Usuario==''){
         psswd =user.pswd_Usuario;
     }
     else{
@@ -77,15 +81,34 @@ module.exports.modUser = function(req,res,user,userBD,pet){
     }
 
     userBD.update({
+        id_Usuario:user.id_Usuario,
         nom_Usuario:nom,
         ap_Usuario:ap,
         tlf_Usuario:tlf,
         dir_Usuario:dir,
         email_Usuario:email,
         pswd_Usuario:psswd},{where:{id_Usuario:user.id_Usuario}}).then(
-        userl=>{
+        ()=>{
+            userBD.findOne({model:this.user, where:{id_Usuario: user.id_Usuario}}).then(usuario =>{
+
             
+                    ctrlUser.showUser(res,usuario,pet);
+                
+          
+            })
         }
         );
 
-};
+}
+
+function setOwner(owner){
+
+    this.owner=owner;
+
+}
+
+function getOwner(){
+
+    return this.owner;
+
+}

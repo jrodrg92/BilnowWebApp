@@ -1,4 +1,5 @@
 var ctrlUser = require('./ctrlUser');
+const ctrlPetInfoWin=require('./ctrlpetInfoWin');
 
 module.exports.showAddPetWin = function(res, user, petBD){
     setOwner(user);
@@ -8,6 +9,7 @@ module.exports.showAddPetWin = function(res, user, petBD){
 
 module.exports.showmodPet = function(req, res, pet){
 
+    setPet(pet);
     res.render('modPet', {id_Mascota:pet.dataValues.id_Mascota,
                         nombre_Mascota:pet.dataValues.nombre_Mascota,
                         esp_Mascota:pet.dataValues.esp_Mascota,
@@ -17,42 +19,53 @@ module.exports.showmodPet = function(req, res, pet){
 
 };
 
-module.exports.modPet= function(req,res,petBD){
+module.exports.modPet= function(req,res,petBD,dateBD){
 
     var pet=getPet();
+    var own = getOwner();
     var nom, esp, raz, capa;
-    if(req.body.nombre_Mascota==null){
+    if(req.body.nombre_Mascota==''){
         nom=pet.nombre_Mascota;
     }
     else{
         nom=req.body.nombre_Mascota;
     }
-    if(req.body.esp_Mascota==null){
+    if(req.body.esp_Mascota==''){
         esp=pet.esp_Mascota;
     }
     else{
         esp=req.body.esp_Mascota;
     }
-    if(req.body.raza_Mascota==null){
+    if(req.body.raza_Mascota==''){
         raz=pet.raza_Mascota;
     }
     else{
         raz=req.body.raza_Mascota;
     }
-    if(req.body.capa_Mascota==null){
+    if(req.body.capa_Mascota==''){
         capa=pet.capa_Mascota;
     }
     else{
         capa=req.body.capa_Mascota;
     }
 
-    petBD.update({nombre_Mascota:nom,
+    petBD.update({
+        id_Mascota:pet.id_Mascota,
+        nombre_Mascota:nom,
         esp_Mascota:esp,
         raza_Mascota:raz,
-        capa_Mascota:capa
+        capa_Mascota:capa,
+        fecha_Nacimiento:pet.fecha_Nacimiento,
+        sexo_Mascota:pet.sexo_Mascota,
+        id_Duenio:pet.id_Duenio
         },{where:{id_Mascota:pet.id_Mascota}}).then(
-        pet=>{
+        ()=>{
+
+            petBD.findOne({model:this.user, where:{id_Mascota: pet.id_Mascota}}).then(petSelected =>{
+
+                ctrlPetInfoWin.showPetInfoWin(req, res, petSelected ,own, petBD, dateBD);
             
+            })
         }
         );
 
