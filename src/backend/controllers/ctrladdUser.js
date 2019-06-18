@@ -35,7 +35,7 @@ module.exports.addUser = function(req,res,user,pet){
     
 };
 
-module.exports.modUser = function(req,res,user,pet){
+module.exports.modUser = function(req,res,user,userBD,pet){
 
     var nom,ap,tlf,dir,email,psswd;
 
@@ -76,7 +76,7 @@ module.exports.modUser = function(req,res,user,pet){
         psswd=req.body.pswd_Usuario;
     }
 
-    user.update({
+    userBD.update({
         nom_Usuario:nom,
         ap_Usuario:ap,
         tlf_Usuario:tlf,
