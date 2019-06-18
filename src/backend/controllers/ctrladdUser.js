@@ -37,13 +37,52 @@ module.exports.addUser = function(req,res,user,pet){
 
 module.exports.modUser = function(req,res,user,pet){
 
-    user.update({ id_Usuario:req.body.id_Usuario,
-        nom_Usuario:req.body.nom_Usuario,
-        ap_Usuario:req.body.ap_Usuario,
-        tlf_Usuario:req.body.tlf_Usuario,
-        dir_Usuario:req.body.dir_Usuario,
-        email_Usuario:req.body.email_Usuario,
-        pswd_Usuario:req.body.pswd_Usuario},{where:{id_Usuario:req.body.id_Usuario}}).then(
+    var nom,ap,tlf,dir,email,psswd;
+
+    if(req.body.nom_Usuario==null){
+        nom =user.nom_Usuario;
+    }
+    else{
+        nom=req.body.nom_Usuario;
+    }
+    if(req.body.ap_Usuario==null){
+        ap =user.ap_Usuario;
+    }
+    else{
+        ap=req.body.ap_Usuario;
+    }
+    if(req.body.tlf_Usuario==null){
+        tlf =user.tlf_Usuario;
+    }
+    else{
+        tlf=req.body.tlf_Usuario;
+    }
+    if(req.body.dir_Usuario==null){
+        dir =user.dir_Usuario;
+    }
+    else{
+        dir=req.body.dir_Usuario;
+    }
+    if(req.body.email_Usuario==null){
+        email =user.email_Usuario;
+    }
+    else{
+        email=req.body.email_Usuario;
+    }
+    if(req.body.pswd_Usuario==null){
+        psswd =user.pswd_Usuario;
+    }
+    else{
+        psswd=req.body.pswd_Usuario;
+    }
+
+    user.update({
+        nom_Usuario:nom,
+        ap_Usuario:ap,
+        tlf_Usuario:tlf,
+        dir_Usuario:dir,
+        email_Usuario:email,
+        pswd_Usuario:psswd},{where:{id_Usuario:user.id_Usuario}}).then(
         userl=>{
             
         }
