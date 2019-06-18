@@ -19,6 +19,8 @@ module.exports.showmodPet = function(req, res, pet){
 
 module.exports.modPet= function(req,res,petBD){
 
+    var pet=getPet();
+    
     petBD.update({ id_Mascota:pet.dataValues.id_Mascota,
         nombre_Mascota:req.body.nombre_Mascota,
         esp_Mascota:req.body.esp_Mascota,
@@ -61,6 +63,17 @@ function setOwner(owner){
 function getOwner(){
 
     return this.owner;
+
+}
+function setPet(pet){
+
+    this.pet=pet;
+
+}
+
+function getPet(){
+
+    return this.pet;
 
 }
 
