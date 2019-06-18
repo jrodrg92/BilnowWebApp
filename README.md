@@ -9,6 +9,10 @@ crear la relaccion entre las tablas como indica el modelo relaccional de la bd q
 
 Clonar repositorio
 
+Al estar incluidos los .json se pueden instalar todos los modulos con el comando npm install
+
+De la otra manera seria:
+
 Iniciar proyecto:
 
 npm init -y
@@ -20,8 +24,6 @@ Instalación modulos:
   - npm i express --save
   - npm i mysql2 --save
   - npm i sequelize --save
-  - npm i sequelize-auto-migration --save
-  - npm i sequelize-cli --save
   - npm i ejs --save
   - npm i faker --save
 
