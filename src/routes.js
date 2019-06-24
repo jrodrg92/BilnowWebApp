@@ -182,6 +182,12 @@ router.post('/AddPrd', (req, res) => {
 
 //CARRITOCOMPRA
 
+router.get('/back', (req,res) => {
+
+  ctrlStore.back(req,res,buyer, prodBD);
+  
+})
+
 router.post('/borrarProd', (req, res) => {
 
   var pos= req.query.id;

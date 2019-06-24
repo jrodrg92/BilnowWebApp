@@ -91,10 +91,8 @@ module.exports.modUser = function(req,res,userBD,pet){
         ()=>{
             userBD.findOne({model:this.user, where:{id_Usuario: user.id_Usuario}}).then(usuario =>{
 
-            
                     ctrlUser.showUser(res,usuario,pet);
-                
-          
+
             })
         }
         );
