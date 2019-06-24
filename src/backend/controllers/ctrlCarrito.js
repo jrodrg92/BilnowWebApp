@@ -1,5 +1,14 @@
 const faker= require('faker');
 const ctrlStore=require('./ctrlStore');
+
+module.exports.back = function(req,res,buyer, prodBD){
+
+    const usuario = getBuyer();
+    this.products=NULL;
+    ctrlStore.showMarketWin(req,res,usuario, prodBD);
+
+};
+
 module.exports.showCarritotWin = function(req,res,buyer,products){
 
     setProds(products);
