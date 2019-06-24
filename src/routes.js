@@ -15,6 +15,7 @@ const ctrlPetInfoWin=require('./backend/controllers/ctrlpetInfoWin');
 const ctrlStore=require('./backend/controllers/ctrlStore');
 const ctrlCarWin=require('./backend/controllers/ctrlCarrito');
 const ctrlAddProd = require('./backend/controllers/ctrlAddProd');
+const ctrlreservWin=require('./backend/controllers/ctrlReservasWin');
 
 //IMPORT MODELS AND INIZILICE THEM
 const Usermod = require('./backend/models/user');
@@ -103,6 +104,13 @@ router.get('/logout', function(req, res, next) {
     res.render('login');
 
 });
+
+router.get('/misCompras', function(req, res, next) {
+
+  ctrlStore.comprasUser(req,res,reserve);
+
+});
+
 
 
 
