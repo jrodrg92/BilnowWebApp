@@ -4,7 +4,7 @@ const ctrlStore=require('./ctrlStore');
 module.exports.back = function(req,res,prodBD){
 
     const usuario = getUser();
-    this.products=NULL;
+    this.products=[];
     ctrlStore.showMarketWin(req,res,usuario, prodBD);
 
 };
