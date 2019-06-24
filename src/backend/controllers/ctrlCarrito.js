@@ -35,7 +35,9 @@ module.exports.makeBuy = function(req,res,reserveDB,prodreservedDB,prodDB){
 
     for(var i=0; i<products.length; i++){
 
-        prodreservedDB.create({id_Reserva:faker.random.uuid(), id_Producto:products[i].id_Producto, productosreservadoIdProducto:products[i].id_Producto}).then();
+        prodreservedDB.create({id_Reserva:faker.random.uuid(), 
+                                id_Producto:products[i].id_Producto, 
+                                productosreservadoIdProducto:products[i].id_Producto}).then();
 
 
     }

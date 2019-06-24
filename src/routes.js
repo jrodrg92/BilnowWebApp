@@ -182,11 +182,11 @@ router.post('/AddPrd', (req, res) => {
 
 //CARRITOCOMPRA
 
-router.get('/back', (req,res) => {
+router.get('/backC', (req,res) => {
 
-  ctrlStore.back(req,res,buyer, prodBD);
+  ctrlUser.showMarket(req,res,prod);
   
-})
+});
 
 router.post('/borrarProd', (req, res) => {
 
