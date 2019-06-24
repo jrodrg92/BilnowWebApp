@@ -123,7 +123,7 @@ router.post('/modPet', (req, res) => {
 
 //PETINFOWINDOW
 
-router.get('/back', (req,res) => {
+router.get('/backPw', (req,res) => {
 
   ctrlPetInfoWin.back(req,res, pet);
   
@@ -156,7 +156,7 @@ router.post('/borrarCita', (req, res) => {
 
 //STORE
 
-router.get('/back', (req,res) => {
+router.get('/backS', (req,res) => {
 
   ctrlStore.back(req,res, pet);
   
