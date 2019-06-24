@@ -184,7 +184,7 @@ router.post('/AddPrd', (req, res) => {
 
 router.get('/backC', (req,res) => {
 
-  ctrlUser.showMarket(req,res,prod);
+  ctrlCarWin.back(req,res,prod);
   
 });
 

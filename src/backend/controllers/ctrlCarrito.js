@@ -1,7 +1,7 @@
 const faker= require('faker');
 const ctrlStore=require('./ctrlStore');
 
-module.exports.back = function(req,res,buyer, prodBD){
+module.exports.back = function(req,res,prodBD){
 
     const usuario = getBuyer();
     this.products=NULL;
